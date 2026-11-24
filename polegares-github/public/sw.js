@@ -1,0 +1,4 @@
+const CACHE = 'polegares-v1';
+self.addEventListener('install', e => { e.waitUntil((async () => { const c = await caches.open(CACHE); await c.addAll(['./','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png']); const html = await (await c.match('./')).text(); const urls = [...html.matchAll(/(?:src|href)="([^"]+\.(?:js|css))"/g)].map(m => new URL(m[1], self.registration.scope).href); await c.addAll(urls); await self.skipWaiting(); })()); });
+self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
+self.addEventListener('fetch', e => { if (e.request.method !== 'GET' || !e.request.url.startsWith(self.registration.scope)) return; e.respondWith((async () => { const c = await caches.open(CACHE); try { const r = await fetch(e.request); if (r.ok) await c.put(e.request, r.clone()); return r; } catch { return (await c.match(e.request)) || (e.request.mode === 'navigate' ? await c.match('./') : Response.error()); } })()); });
