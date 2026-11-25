@@ -35,29 +35,26 @@ export default defineConfig({
 
         start_url: '/polegares-app/',
         scope: '/polegares-app/',
-
-        icons: [
-          {
-            src: 'icons/icon-192.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any',
-          },
-          {
-            src: 'icons/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any',
-          },
-          {
-            src: 'icons/pwa-maskable-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable',
-          },
-        ],
-      },
-
+icons: [
+  {
+    src: 'icons/polegares-192.png',
+    sizes: '192x192',
+    type: 'image/png',
+    purpose: 'any',
+  },
+  {
+    src: 'icons/polegares-512.png',
+    sizes: '512x512',
+    type: 'image/png',
+    purpose: 'any',
+  },
+  {
+    src: 'icons/polegares-maskable.png',
+    sizes: '512x512',
+    type: 'image/png',
+    purpose: 'maskable',
+  },
+],
       workbox: {
         globPatterns: [
           '**/*.{js,css,html,ico,png,svg,woff,woff2,webmanifest}'
