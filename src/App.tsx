@@ -92,7 +92,7 @@ export function App() {
     <>
       <header className="app-header-bar">
         <img
-          src="/icons/icon-192.png"
+         src="/polegares-app/icons/icon-192.png"
           alt="Logo Polegares"
           className="app-header-logo"
         />
@@ -102,7 +102,7 @@ export function App() {
       <main className="main-container">
         <div className="logo-row">
           <div className="logo-center">
-            <img src="/icons/icon-512.png" alt="Logomarca Polegares" />
+            <img src="/polegares-app/icons/icon-512.png" alt="Logomarca Polegares" />
           </div>
         </div>
 
